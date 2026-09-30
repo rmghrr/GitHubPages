@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RmgTv — Live TV & Channel Management</title>
+  <meta name="description" content="A cleaner, faster, and more organised way to browse your television channels on Android TV and Fire TV.">
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          },
+          colors: {
+            appDark: '#0B0F19',
+            cardDark: '#121826',
+            cardBorder: '#1F293D',
+            brandPurple: '#6366F1',
+            brandEmerald: '#10B981',
+            brandOrange: '#F97316',
+            brandSky: '#0284C7',
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #0B0F19;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #1F293D;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #374151;
+    }
+    .glow-indigo {
+      box-shadow: 0 0 50px -12px rgba(99, 102, 241, 0.25);
+    }
+  </style>
+</head>
+
+<body class="bg-appDark text-slate-100 font-sans antialiased selection:bg-brandPurple selection:text-white min-h-screen flex flex-col">
+
+  <!-- Header -->
+  <header class="sticky top-0 z-50 backdrop-blur-md bg-appDark/85 border-b border-cardBorder">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      <div class="flex items-center space-x-3">
+        <img src="./App-Icon3.png" alt="RmgTv Logo" class="w-10 h-10 rounded-xl shadow-lg shadow-indigo-500/20 object-cover" />
+        <div>
+          <span class="text-base sm:text-lg font-bold tracking-tight text-white block">RmgTv</span>
+          <span class="text-xs text-slate-400 font-medium tracking-wide hidden sm:block">Live TV & Channel Management</span>
+        </div>
+      </div>
+
+      <nav class="hidden md:flex items-center space-x-7 text-sm font-medium text-slate-300">
+        <a href="#about" class="hover:text-indigo-400 transition-colors">About</a>
+        <a href="#features" class="hover:text-indigo-400 transition-colors">Features</a>
+        <a href="#screenshots" class="hover:text-indigo-400 transition-colors">Screenshots</a>
+        <a href="#disclaimer" class="hover:text-indigo-400 transition-colors">Important Info</a>
+      </nav>
+
+      <div class="flex items-center space-x-3">
+        <a href="https://www.amazon.com/gp/product/B0HC264S44" target="_blank" rel="noopener noreferrer" class="px-4 py-2 text-xs sm:text-sm font-semibold text-slate-900 bg-amber-500 hover:bg-amber-400 rounded-lg shadow-md shadow-amber-500/30 transition-all flex items-center">
+          <svg class="w-4 h-4 mr-1.5" fill="currentColor" viewBox="0 0 24 24"><path d="M13.62 10.87a2.76 2.76 0 0 0-2.6-1.89c-1.39 0-2.6 1.05-2.6 2.5 0 1.5 1.25 2.55 2.65 2.55 1.13 0 2.05-.62 2.5-1.55.15-.3.51-.43.83-.28.32.14.46.5.31.81-.66 1.34-1.95 2.22-3.48 2.22-2.18 0-3.95-1.77-3.95-3.95 0-2.18 1.77-3.95 3.95-3.95 1.7 0 3.23 1.05 3.79 2.65.13.36-.05.76-.41.89-.37.12-.76-.06-.89-.41zM21.2 5.37C18.63 2.8 15.17 1.3 11.5 1.3c-7.23 0-13.1 5.87-13.1 13.1S4.27 27.5 11.5 27.5c3.67 0 7.13-1.5 9.7-4.07.28-.28.28-.73 0-1.01-.28-.28-.73-.28-1.01 0-2.42 2.42-5.63 3.75-9.05 3.75-6.68 0-12.1-5.42-12.1-12.1s5.42-12.1 12.1-12.1c3.42 0 6.63 1.33 9.05 3.75.28.28.73.28 1.01 0 .28-.28.28-.73 0-1.01z"/></svg>
+          Get on Amazon
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main class="flex-grow">
+    <!-- Hero Section -->
+    <section id="about" class="relative pt-16 pb-12 overflow-hidden">
+      <div class="absolute inset-0 -z-10 flex items-center justify-center opacity-30">
+        <div class="w-[620px] h-[620px] bg-indigo-600/20 blur-[150px] rounded-full pointer-events-none"></div>
+      </div>
+      
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-300 text-xs font-medium mb-6">
+          <span class="w-2 h-2 rounded-full bg-brandEmerald animate-pulse"></span>
+          Optimized for Android TV & Fire OS
+        </div>
+        
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-tight">
+          A cleaner, faster way to organize your television channels.
+        </h1>
+        
+        <p class="mt-6 text-base sm:text-lg text-slate-400 leading-relaxed">
+          RmgTv is a Live TV and Channel Management application built specifically for the TV and set-top box ecosystem. If you've ever wanted a more organized way to browse your television channels, this is it.
+        </p>
+
+        <div class="mt-10 flex justify-center">
+          <a href="https://www.amazon.com/gp/product/B0HC264S44" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center px-8 py-4 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-900 font-bold text-lg transition-all shadow-xl shadow-amber-500/20">
+            <svg class="w-6 h-6 mr-2" fill="currentColor" viewBox="0 0 24 24"><path d="M13.62 10.87a2.76 2.76 0 0 0-2.6-1.89c-1.39 0-2.6 1.05-2.6 2.5 0 1.5 1.25 2.55 2.65 2.55 1.13 0 2.05-.62 2.5-1.55.15-.3.51-.43.83-.28.32.14.46.5.31.81-.66 1.34-1.95 2.22-3.48 2.22-2.18 0-3.95-1.77-3.95-3.95 0-2.18 1.77-3.95 3.95-3.95 1.7 0 3.23 1.05 3.79 2.65.13.36-.05.76-.41.89-.37.12-.76-.06-.89-.41zM21.2 5.37C18.63 2.8 15.17 1.3 11.5 1.3c-7.23 0-13.1 5.87-13.1 13.1S4.27 27.5 11.5 27.5c3.67 0 7.13-1.5 9.7-4.07.28-.28.28-.73 0-1.01-.28-.28-.73-.28-1.01 0-2.42 2.42-5.63 3.75-9.05 3.75-6.68 0-12.1-5.42-12.1-12.1s5.42-12.1 12.1-12.1c3.42 0 6.63 1.33 9.05 3.75.28.28.73.28 1.01 0 .28-.28.28-.73 0-1.01z"/></svg>
+            Available on Amazon Appstore
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Context Info Section -->
+    <section class="py-8">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="bg-indigo-900/20 border border-indigo-500/30 p-6 rounded-2xl">
+          <div class="flex items-start space-x-4">
+            <svg class="w-6 h-6 text-indigo-400 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+            <div class="text-sm text-slate-300 leading-relaxed">
+              <strong class="text-white">Important:</strong> This app is helpful for those who own TV with tuners such as DVB-S2 and DVB-T2 and have a Live channel list in their TV scanned through native TV app. It also supports the list provided by other apps which register their channels into TvInput service such as Haystak News app.<br><br>
+              This app do not pull any list from internet or contain any predefined list of channel URL to display. It operates on existing TV channel list which you already got and also it do not provide any channel scan facility. It acts as a top layer interface only to improve user viewing experience.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl font-extrabold text-white">✨ App Features</h2>
+        <p class="mt-3 text-slate-400">Check out the breakdown of the core features below! 👇</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Feature 1 -->
+        <div class="p-6 rounded-2xl bg-cardDark border border-cardBorder hover:border-indigo-500/40 transition-all">
+          <div class="w-12 h-12 rounded-xl bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 flex items-center justify-center mb-5 text-xl">📺</div>
+          <h3 class="text-lg font-semibold text-white">Seamless Live TV Playback</h3>
+          <p class="mt-2 text-sm text-slate-400 leading-relaxed">A lightweight, highly responsive player built to instantly tune into your favorite Live TV and Radio streams.</p>
+        </div>
+
+        <!-- Feature 2 -->
+        <div class="p-6 rounded-2xl bg-cardDark border border-cardBorder hover:border-emerald-500/40 transition-all">
+          <div class="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 flex items-center justify-center mb-5 text-xl">🗂️</div>
+          <h3 class="text-lg font-semibold text-white">Dynamic Channel Categories</h3>
+          <p class="mt-2 text-sm text-slate-400 leading-relaxed">An integrated dashboard that allows you to easily organize and filter channels into custom lists for lightning-fast browsing.</p>
+        </div>
+
+        <!-- Feature 3 -->
+        <div class="p-6 rounded-2xl bg-cardDark border border-cardBorder hover:border-sky-500/40 transition-all">
+          <div class="w-12 h-12 rounded-xl bg-sky-500/10 border border-sky-500/20 text-sky-400 flex items-center justify-center mb-5 text-xl">🔎</div>
+          <h3 class="text-lg font-semibold text-white">Smart Search & Find</h3>
+          <p class="mt-2 text-sm text-slate-400 leading-relaxed">A dedicated search grid that filters through hundreds of networks in real-time, helping you find exactly what you want to watch.</p>
+        </div>
+
+        <!-- Feature 4 -->
+        <div class="p-6 rounded-2xl bg-cardDark border border-cardBorder hover:border-orange-500/40 transition-all">
+          <div class="w-12 h-12 rounded-xl bg-orange-500/10 border border-orange-500/20 text-orange-400 flex items-center justify-center mb-5 text-xl">ℹ️</div>
+          <h3 class="text-lg font-semibold text-white">Interactive Channel Info Banner</h3>
+          <p class="mt-2 text-sm text-slate-400 leading-relaxed">A beautiful on-screen overlay (CIB) that pulls real-time Electronic Program Guide (EPG) data, showing you the current broadcast, upcoming show times, and dates.</p>
+        </div>
+
+        <!-- Feature 5 -->
+        <div class="p-6 rounded-2xl bg-cardDark border border-cardBorder hover:border-purple-500/40 transition-all">
+          <div class="w-12 h-12 rounded-xl bg-purple-500/10 border border-purple-500/20 text-purple-400 flex items-center justify-center mb-5 text-xl">🖼️</div>
+          <h3 class="text-lg font-semibold text-white">Intelligent Logo Matching</h3>
+          <p class="mt-2 text-sm text-slate-400 leading-relaxed">The app automatically scans your channel list and assigns high-quality, customised logo artwork for TV networks and radio stations.</p>
+        </div>
+
+        <!-- Feature 6 -->
+        <div class="p-6 rounded-2xl bg-cardDark border border-cardBorder hover:border-rose-500/40 transition-all">
+          <div class="w-12 h-12 rounded-xl bg-rose-500/10 border border-rose-500/20 text-rose-400 flex items-center justify-center mb-5 text-xl">🔄</div>
+          <h3 class="text-lg font-semibold text-white">Full Layout Backup & Restore</h3>
+          <p class="mt-2 text-sm text-slate-400 leading-relaxed">Engineered with a complete JSON export/import system so you can save your perfect layout configuration and instantly restore it anytime.</p>
+        </div>
+
+        <!-- Feature 7 -->
+        <div class="p-6 rounded-2xl bg-cardDark border border-cardBorder hover:border-amber-500/40 transition-all lg:col-span-3 xl:col-span-1">
+          <div class="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/20 text-amber-400 flex items-center justify-center mb-5 text-xl">🛠️</div>
+          <h3 class="text-lg font-semibold text-white">Advanced Management Tools</h3>
+          <p class="mt-2 text-sm text-slate-400 leading-relaxed">Complete control over your lineup with the ability to sync system channels, batch delete unwanted networks, and seamlessly reorder your favourites.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Screenshots Section -->
+    <section id="screenshots" class="py-16 bg-slate-950/60 border-y border-cardBorder">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl font-bold text-white">App Interface</h2>
+          <p class="mt-2 text-sm text-slate-400">See RmgTv in action on the big screen.</p>
+        </div>
+
+        <div class="flex flex-col gap-12">
+          <!-- Placeholder 1 -->
+          <div class="rounded-2xl border border-cardBorder bg-cardDark shadow-2xl overflow-hidden glow-indigo">
+            <img 
+              src="./screenshot1.png" 
+              alt="RmgTv Screenshot 1" 
+              class="w-full h-auto aspect-video object-cover bg-slate-900"
+              onerror="this.onerror=null; this.src='https://placehold.co/1280x720/121826/475569?text=RmgTv+Screenshot+1+(Replace+screenshot1.png)';"
+            />
+          </div>
+          <!-- Placeholder 2 -->
+          <div class="rounded-2xl border border-cardBorder bg-cardDark shadow-2xl overflow-hidden">
+            <img 
+              src="./screenshot2.png" 
+              alt="RmgTv Screenshot 2" 
+              class="w-full h-auto aspect-video object-cover bg-slate-900"
+              onerror="this.onerror=null; this.src='https://placehold.co/1280x720/121826/475569?text=RmgTv+Screenshot+2+(Replace+screenshot2.png)';"
+            />
+          </div>
+          <!-- Placeholder 3 -->
+          <div class="rounded-2xl border border-cardBorder bg-cardDark shadow-2xl overflow-hidden">
+            <img 
+              src="./screenshot3.png" 
+              alt="RmgTv Screenshot 3" 
+              class="w-full h-auto aspect-video object-cover bg-slate-900"
+              onerror="this.onerror=null; this.src='https://placehold.co/1280x720/121826/475569?text=RmgTv+Screenshot+3+(Replace+screenshot3.png)';"
+            />
+          </div>
+          <!-- Placeholder 4 -->
+          <div class="rounded-2xl border border-cardBorder bg-cardDark shadow-2xl overflow-hidden">
+            <img 
+              src="./screenshot4.png" 
+              alt="RmgTv Screenshot 4" 
+              class="w-full h-auto aspect-video object-cover bg-slate-900"
+              onerror="this.onerror=null; this.src='https://placehold.co/1280x720/121826/475569?text=RmgTv+Screenshot+4+(Replace+screenshot4.png)';"
+            />
+          </div>
+          <!-- Placeholder 5 -->
+          <div class="rounded-2xl border border-cardBorder bg-cardDark shadow-2xl overflow-hidden">
+            <img 
+              src="./screenshot5.png" 
+              alt="RmgTv Screenshot 5" 
+              class="w-full h-auto aspect-video object-cover bg-slate-900"
+              onerror="this.onerror=null; this.src='https://placehold.co/1280x720/121826/475569?text=RmgTv+Screenshot+5+(Replace+screenshot5.png)';"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Disclaimers Section -->
+    <section id="disclaimer" class="py-16 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="p-8 rounded-3xl bg-[#0d121f] border border-red-500/20">
+        <h3 class="text-xl font-bold text-red-400 mb-6 flex items-center">
+          <svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+          Disclaimer &amp; Important Notes
+        </h3>
+        
+        <ul class="space-y-4 text-sm text-slate-400">
+          <li class="flex items-start">
+            <span class="w-1.5 h-1.5 mt-2 rounded-full bg-slate-500 mr-3 flex-shrink-0"></span>
+            <div><strong class="text-slate-200">Zero Content Provided:</strong> This application does not host, provide, or download any IPTV streams, media, or playlists from the internet.</div>
+          </li>
+          <li class="flex items-start">
+            <span class="w-1.5 h-1.5 mt-2 rounded-full bg-slate-500 mr-3 flex-shrink-0"></span>
+            <div><strong class="text-slate-200">Local Management Only:</strong> This app functions strictly as a local interface. It securely scans your device to organise and display channels that have already been populated on your hardware via the system's native TvInputService.</div>
+          </li>
+          <li class="flex items-start">
+            <span class="w-1.5 h-1.5 mt-2 rounded-full bg-slate-500 mr-3 flex-shrink-0"></span>
+            <div><strong class="text-slate-200">Promotional Imagery:</strong> The splash screen and promotional artwork used are for illustrative purposes only. Please review the actual app screenshots and read this description carefully before purchasing.</div>
+          </li>
+          <li class="flex items-start">
+            <span class="w-1.5 h-1.5 mt-2 rounded-full bg-slate-500 mr-3 flex-shrink-0"></span>
+            <div><strong class="text-slate-200">EPG Availability:</strong> Electronic Program Guide (EPG) visibility relies entirely on your TV manufacturer (OEM) granting third-party apps read access to the system's internal Programs database.</div>
+          </li>
+          <li class="flex items-start">
+            <span class="w-1.5 h-1.5 mt-2 rounded-full bg-slate-500 mr-3 flex-shrink-0"></span>
+            <div><strong class="text-slate-200">Channel Logos:</strong> Automatic logo matching is currently optimised for select Free-to-Air (FTA) channels in India. Support for additional channels and global regions will be added in future updates.</div>
+          </li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-slate-950 border-t border-cardBorder py-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-slate-400">
+      <div class="flex items-center space-x-2">
+        <span class="font-semibold text-slate-300">RmgTv</span>
+        <span>•</span>
+        <span>Android TV / Fire OS</span>
+      </div>
+
+      <div class="flex items-center space-x-6">
+        <a href="#features" class="hover:text-slate-200 transition-colors">Features</a>
+        <a href="#screenshots" class="hover:text-slate-200 transition-colors">Screenshots</a>
+        <a href="https://www.amazon.com/gp/product/B0HC264S44" target="_blank" rel="noopener noreferrer" class="hover:text-slate-200 transition-colors text-amber-500">Download on Amazon</a>
+      </div>
+
+      <div>
+        <p>© 2026 RmgTv. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
