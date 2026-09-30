@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book Library Manager Pro — Personal Desktop Book Cataloging Software</title>
+  <meta name="description" content="Organize, track, and preserve your personal physical book collection on Windows desktop. Built-in lending manager, collection valuation in ₹, and multilingual cataloging.">
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          },
+          colors: {
+            appDark: '#0B0F19',
+            cardDark: '#121826',
+            cardBorder: '#1F293D',
+            brandPurple: '#6366F1',
+            brandEmerald: '#10B981',
+            brandOrange: '#F97316',
+            brandSky: '#0284C7',
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #0B0F19;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #1F293D;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #374151;
+    }
+    .glow-indigo {
+      box-shadow: 0 0 50px -12px rgba(99, 102, 241, 0.25);
+    }
+    .glow-emerald {
+      box-shadow: 0 0 40px -10px rgba(16, 185, 129, 0.2);
+    }
+  </style>
+</head>
+
+<body class="bg-appDark text-slate-100 font-sans antialiased selection:bg-brandPurple selection:text-white min-h-screen flex flex-col">
+
+  <header class="sticky top-0 z-50 backdrop-blur-md bg-appDark/85 border-b border-cardBorder">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      <div class="flex items-center space-x-3">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-indigo-600 to-indigo-400 flex items-center justify-center shadow-lg shadow-indigo-500/20 border border-indigo-400/30">
+          <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+          </svg>
+        </div>
+        <div>
+          <span class="text-base sm:text-lg font-bold tracking-tight text-white block">Book Library Manager Pro</span>
+          <span class="text-xs text-slate-400 font-medium tracking-wide hidden sm:block">Organize • Track • Enjoy • Preserve</span>
+        </div>
+      </div>
+
+      <nav class="hidden md:flex items-center space-x-7 text-sm font-medium text-slate-300">
+        <a href="#features" class="hover:text-indigo-400 transition-colors">Features</a>
+        <a href="#preview" class="hover:text-indigo-400 transition-colors">App Preview</a>
+        <a href="#activation" class="hover:text-indigo-400 transition-colors">Setup &amp; Activation</a>
+        <a href="#pricing" class="text-emerald-400 hover:text-emerald-300 transition-colors">Pricing &amp; License</a>
+      </nav>
+
+      <div class="flex items-center space-x-3">
+        <a href="#download" class="px-4 py-2 text-xs sm:text-sm font-semibold text-slate-200 bg-cardDark hover:bg-slate-800 border border-cardBorder rounded-lg transition-all">
+          Download
+        </a>
+        <a href="#activation" class="px-4 py-2 text-xs sm:text-sm font-semibold text-white bg-indigo-600 hover:bg-indigo-500 rounded-lg shadow-md shadow-indigo-600/30 transition-all">
+          Free Trial
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main class="flex-grow">
+    <section class="relative pt-14 pb-20 overflow-hidden">
+      <div class="absolute inset-0 -z-10 flex items-center justify-center opacity-30">
+        <div class="w-[620px] h-[620px] bg-indigo-600/20 blur-[150px] rounded-full pointer-events-none"></div>
+      </div>
+      
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-300 text-xs font-medium mb-6">
+          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+          Windows Desktop Application • 100% Offline Local Database
+        </div>
+        
+        <h1 class="text-4xl sm:text-6xl font-extrabold text-white tracking-tight leading-tight max-w-4xl mx-auto">
+          The ultimate personal physical library catalog for book lovers.
+        </h1>
+        
+        <p class="mt-6 text-base sm:text-lg text-slate-400 max-w-2xl mx-auto leading-relaxed">
+          Catalog your physical titles, log who borrowed your books, track collection valuation in Indian Rupees (₹), and organize literature across English, Kannada, and regional languages.
+        </p>
+
+        <!-- Metric highlights matching software UI -->
+        <div class="mt-12 grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto text-left">
+          <div class="bg-indigo-600/15 border border-indigo-500/30 p-4 rounded-xl">
+            <span class="text-xs uppercase font-semibold text-indigo-300 tracking-wider">Catalog Size</span>
+            <p class="text-2xl font-bold text-white mt-1">Unlimited</p>
+            <span class="text-xs text-slate-400">Books, Authors &amp; Editions</span>
+          </div>
+          <div class="bg-emerald-600/15 border border-emerald-500/30 p-4 rounded-xl">
+            <span class="text-xs uppercase font-semibold text-emerald-300 tracking-wider">Lending Logs</span>
+            <p class="text-2xl font-bold text-white mt-1">Zero Lost</p>
+            <span class="text-xs text-slate-400">Borrower tracking &amp; dates</span>
+          </div>
+          <div class="bg-orange-600/15 border border-orange-500/30 p-4 rounded-xl">
+            <span class="text-xs uppercase font-semibold text-orange-300 tracking-wider">Privacy First</span>
+            <p class="text-2xl font-bold text-white mt-1">100% Local</p>
+            <span class="text-xs text-slate-400">Your data stays on your PC</span>
+          </div>
+          <div class="bg-sky-600/15 border border-sky-500/30 p-4 rounded-xl">
+            <span class="text-xs uppercase font-semibold text-sky-300 tracking-wider">Valuation</span>
+            <p class="text-2xl font-bold text-white mt-1">Real-time ₹</p>
+            <span class="text-xs text-slate-400">Track total collection worth</span>
+          </div>
+        </div>
+
+        <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
+          <a href="#download" class="w-full sm:w-auto inline-flex items-center justify-center px-8 py-3.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-semibold text-sm transition-all shadow-xl shadow-indigo-600/30">
+            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
+            </svg>
+            Download Free Installer (.exe)
+          </a>
+          <a href="#activation" class="w-full sm:w-auto inline-flex items-center justify-center px-8 py-3.5 rounded-xl bg-cardDark hover:bg-slate-800 text-slate-200 border border-cardBorder font-semibold text-sm transition-all">
+            Get 1-Week Free Trial
+          </a>
+        </div>
+        <p class="mt-3 text-xs text-slate-500">Compatible with Windows 10 / 11 (64-bit). No initial payment or credit card required.</p>
+      </div>
+    </section>
+
+    <section id="preview" class="py-16 bg-slate-950/60 border-y border-cardBorder">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-10">
+          <h2 class="text-2xl sm:text-3xl font-bold text-white">Designed for Avid Bibliophiles</h2>
+          <p class="mt-2 text-sm text-slate-400">High-performance dark theme inspired by Cicero: “A room without books is like a body without a soul.”</p>
+        </div>
+
+        <!-- Windows App Window Frame -->
+        <div class="rounded-2xl border border-cardBorder bg-cardDark/90 shadow-2xl overflow-hidden glow-indigo">
+          <div class="bg-[#121622] px-4 py-2.5 flex items-center justify-between border-b border-cardBorder select-none">
+            <div class="flex items-center space-x-2">
+              <div class="w-3 h-3 rounded-full bg-slate-700"></div>
+              <span class="text-xs text-slate-400 font-medium">Book Library Manager Pro</span>
+            </div>
+            <div class="flex items-center space-x-3 text-slate-500">
+              <div class="w-3 h-0.5 bg-slate-500"></div>
+              <div class="w-2.5 h-2.5 border border-slate-500"></div>
+              <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+            </div>
+          </div>
+
+          <!-- Screenshot Display -->
+          <div class="relative bg-[#0F1420] p-2 sm:p-4 overflow-hidden">
+            <div class="rounded-lg overflow-hidden border border-slate-800 shadow-inner group">
+              <img 
+                src="./screenshot.png" 
+                alt="Book Library Manager Pro Dashboard showing Recent Library Books, Analytics, and Collection Valuation" 
+                class="w-full h-auto object-cover rounded-lg"
+                onerror="this.onerror=null; this.src='https://placehold.co/1200x675/0f172a/94a3b8?text=Book+Library+Manager+Pro+Dashboard+(Place+screenshot.png+in+root)';"
+              />
+            </div>
+          </div>
+          
+          <div class="px-6 py-4 bg-[#0E131E] border-t border-cardBorder flex flex-wrap items-center justify-between text-xs text-slate-400">
+            <div class="flex items-center space-x-4">
+              <span class="flex items-center"><span class="w-2 h-2 rounded-full bg-brandEmerald mr-1.5"></span> Local SQLite Engine</span>
+              <span>•</span>
+              <span class="flex items-center"><span class="w-2 h-2 rounded-full bg-brandPurple mr-1.5"></span> Multilingual (ಕನ್ನಡ / English / Regional)</span>
+            </div>
+            <span class="text-slate-500 italic mt-2 sm:mt-0">“A room without books is like a body without a soul.” — Cicero</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="features" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <h2 class="text-xs uppercase tracking-widest text-indigo-400 font-bold mb-2">Capabilities</h2>
+        <p class="text-3xl font-extrabold text-white">Engineered for your physical bookshelf sanctuary</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="p-6 rounded-2xl bg-cardDark border border-cardBorder hover:border-indigo-500/40 transition-all">
+          <div class="w-12 h-12 rounded-xl bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 flex items-center justify-center mb-5">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
+          </div>
+          <h3 class="text-lg font-semibold text-white">Full Catalog &amp; Cover Art</h3>
+          <p class="mt-2 text-sm text-slate-400 leading-relaxed">
+            Record title, author, publish year, genre, ISBN, price, and personal rating. View your collection in high-density grid cards or a detailed searchable table.
+          </p>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-cardDark border border-cardBorder hover:border-emerald-500/40 transition-all">
+          <div class="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 flex items-center justify-center mb-5">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"></path></svg>
+          </div>
+          <h3 class="text-lg font-semibold text-white">Lend &amp; Return Tracking</h3>
+          <p class="mt-2 text-sm text-slate-400 leading-relaxed">
+            Never wonder who took your favorite book. Record borrower name, phone number, issue date, and expected return date with instant status filters.
+          </p>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-cardDark border border-cardBorder hover:border-sky-500/40 transition-all">
+          <div class="w-12 h-12 rounded-xl bg-sky-500/10 border border-sky-500/20 text-sky-400 flex items-center justify-center mb-5">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+          </div>
+          <h3 class="text-lg font-semibold text-white">Collection Valuation in ₹</h3>
+          <p class="mt-2 text-sm text-slate-400 leading-relaxed">
+            Keep track of the monetary worth of your entire library in Indian Rupees. Instantly understand the financial investment made into your bookshelves.
+          </p>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-cardDark border border-cardBorder hover:border-orange-500/40 transition-all">
+          <div class="w-12 h-12 rounded-xl bg-orange-500/10 border border-orange-500/20 text-orange-400 flex items-center justify-center mb-5">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129"></path></svg>
+          </div>
+          <h3 class="text-lg font-semibold text-white">Regional Language Support</h3>
+          <p class="mt-2 text-sm text-slate-400 leading-relaxed">
+            Optimized for Kannada (ಕನ್ನಡ), Hindi, Marathi, Sanskrit, Tamil, and English. Catalog classical literature like Ramayana Darshanam and Parva effortlessly.
+          </p>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-cardDark border border-cardBorder hover:border-purple-500/40 transition-all">
+          <div class="w-12 h-12 rounded-xl bg-purple-500/10 border border-purple-500/20 text-purple-400 flex items-center justify-center mb-5">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg>
+          </div>
+          <h3 class="text-lg font-semibold text-white">Genre &amp; Author Analytics</h3>
+          <p class="mt-2 text-sm text-slate-400 leading-relaxed">
+            Real-time visual charts illustrating reading preferences across genres (Mythological, Historical, Romance) and top authors (SL Bhyrappa, Kuvempu, Amish).
+          </p>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-cardDark border border-cardBorder hover:border-rose-500/40 transition-all">
+          <div class="w-12 h-12 rounded-xl bg-rose-500/10 border border-rose-500/20 text-rose-400 flex items-center justify-center mb-5">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 4H6a2 2 0 00-2 2v12a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-2m-4-1v8m0 0l3-3m-3 3L9 8m-5 5h2.586a1 1 0 01.707.293l2.414 2.414a1 1 0 00.707.293h3.172a1 1 0 00.707-.293l2.414-2.414a1 1 0 01.707-.293H20"></path></svg>
+          </div>
+          <h3 class="text-lg font-semibold text-white">Backup &amp; Restore</h3>
+          <p class="mt-2 text-sm text-slate-400 leading-relaxed">
+            One-click local backup creates a portable package of your SQLite database and cover art. Move your library database across PCs with total safety.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="download" class="py-20 bg-slate-950/70 border-t border-cardBorder">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="bg-gradient-to-b from-cardDark to-[#0c1220] border border-cardBorder rounded-3xl p-8 sm:p-12 text-center relative overflow-hidden">
+          <div class="inline-flex p-3 rounded-2xl bg-indigo-600/10 border border-indigo-600/30 text-indigo-400 mb-4">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+          </div>
+          
+          <h2 class="text-2xl sm:text-3xl font-bold text-white">Download Book Library Manager Pro</h2>
+          <p class="mt-2 text-sm text-slate-400 max-w-xl mx-auto">
+            Get the full desktop application installer. Test your complete library management workflow with our complimentary 1-week evaluation period.
+          </p>
+
+          <div class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
+            <!-- Replace YOUR_DOWNLOAD_LINK with your Google Drive / GitHub Release direct link -->
+            <a 
+              href="https://drive.google.com/file/d/1F54a-2ah8pPAFYReha7VyXN9xBfiwkQw/view?usp=drive_link" 
+              class="w-full sm:w-auto px-8 py-4 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold rounded-xl shadow-lg shadow-emerald-500/20 transition-all inline-flex items-center justify-center gap-2"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <svg class="w-5 h-5 text-slate-950" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+              Download Windows Installer (.exe)
+            </a>
+          </div>
+
+          <div class="mt-8 pt-8 border-t border-cardBorder grid grid-cols-2 sm:grid-cols-4 gap-4 text-xs text-slate-400 text-center">
+            <div>
+              <span class="block text-slate-500">Version</span>
+              <span class="font-semibold text-slate-200 mt-0.5 block">1.0.0</span>
+            </div>
+            <div>
+              <span class="block text-slate-500">File Type</span>
+              <span class="font-semibold text-slate-200 mt-0.5 block">Standalone Setup</span>
+            </div>
+            <div>
+              <span class="block text-slate-500">Platform</span>
+              <span class="font-semibold text-slate-200 mt-0.5 block">Windows 10 / 11 (64-bit)</span>
+            </div>
+            <div>
+              <span class="block text-slate-500">Database</span>
+              <span class="font-semibold text-slate-200 mt-0.5 block">Local SQLite Storage</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="activation" class="py-20 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <span class="text-xs uppercase tracking-widest text-emerald-400 font-bold">Quick Start Guide</span>
+        <h2 class="text-3xl font-extrabold text-white mt-1">Installation &amp; Activation Instructions</h2>
+        <p class="mt-2 text-sm text-slate-400 max-w-2xl mx-auto">
+          Follow these 4 simple steps to install the software, retrieve your unique machine Host ID, and receive your 1-week free trial key at no charge.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <!-- Step 1 -->
+        <div class="bg-cardDark border border-cardBorder p-6 rounded-2xl flex flex-col justify-between hover:border-slate-700 transition-colors">
+          <div>
+            <div class="w-9 h-9 rounded-xl bg-indigo-600/20 text-indigo-400 font-bold text-sm flex items-center justify-center mb-4 border border-indigo-600/30">1</div>
+            <h3 class="text-base font-semibold text-white">Download &amp; Install</h3>
+            <p class="text-xs text-slate-400 mt-2 leading-relaxed">
+              Download the setup package from above and run the installer on your 64-bit Windows PC. Launch the application from your desktop or start menu.
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-cardBorder/60 text-[11px] text-slate-500">
+            ✓ Quick setup wizard<br>
+            ✓ No internet needed after setup
+          </div>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="bg-cardDark border border-cardBorder p-6 rounded-2xl flex flex-col justify-between hover:border-slate-700 transition-colors">
+          <div>
+            <div class="w-9 h-9 rounded-xl bg-orange-600/20 text-orange-400 font-bold text-sm flex items-center justify-center mb-4 border border-orange-600/30">2</div>
+            <h3 class="text-base font-semibold text-white">Retrieve Host ID</h3>
+            <p class="text-xs text-slate-400 mt-2 leading-relaxed">
+              In the app, click the <strong>Settings</strong> gear icon on the top-right and select the <strong>License / Activation</strong> tab. Copy your machine's unique <strong>Host ID</strong>.
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-cardBorder/60 text-[11px] text-slate-500">
+            ✓ One-click copy Host ID button<br>
+            ✓ Unique to your hardware
+          </div>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="bg-cardDark border border-emerald-500/40 p-6 rounded-2xl flex flex-col justify-between glow-emerald relative">
+          <span class="absolute -top-3 right-4 bg-emerald-500 text-slate-950 font-bold text-[10px] uppercase tracking-wider px-2 py-0.5 rounded-full">No Charge</span>
+          <div>
+            <div class="w-9 h-9 rounded-xl bg-emerald-600/20 text-emerald-400 font-bold text-sm flex items-center justify-center mb-4 border border-emerald-600/30">3</div>
+            <h3 class="text-base font-semibold text-white">Request Free Trial</h3>
+            <p class="text-xs text-slate-400 mt-2 leading-relaxed">
+              Email your Host ID to <strong class="text-emerald-300">ramgokak@yahoo.co.in</strong> with subject: <code class="text-[11px] bg-slate-900 px-1 py-0.5 rounded text-slate-300 block mt-1">Request 1-Week Trial License</code>
+            </p>
+          </div>
+          <div class="mt-4">
+            <a 
+              href="mailto:ramgokak@yahoo.co.in?subject=Request%201-Week%20Trial%20License&body=Hello,%0D%0A%0D%0AI%20would%20like%20to%20request%20a%20free%201-week%20trial%20license%20for%20Book%20Library%20Manager%20Pro.%0D%0A%0D%0AMy%20Host%20ID%20is:%20[PASTE_HOST_ID_HERE]%0D%0A%0D%0AThank%20you!"
+              class="w-full inline-flex items-center justify-center px-3 py-2 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white font-medium text-xs transition-colors"
+            >
+              Email Host ID
+            </a>
+          </div>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="bg-cardDark border border-cardBorder p-6 rounded-2xl flex flex-col justify-between hover:border-slate-700 transition-colors">
+          <div>
+            <div class="w-9 h-9 rounded-xl bg-sky-600/20 text-sky-400 font-bold text-sm flex items-center justify-center mb-4 border border-sky-600/30">4</div>
+            <h3 class="text-base font-semibold text-white">Activate &amp; Enjoy</h3>
+            <p class="text-xs text-slate-400 mt-2 leading-relaxed">
+              We will email back your free 7-day activation key. Paste it into the Activation dialog and click <strong>Activate</strong> to start managing your library immediately!
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-cardBorder/60 text-[11px] text-slate-500">
+            ✓ Dispatched directly to inbox<br>
+            ✓ Instant full feature unlock
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="pricing" class="py-20 bg-slate-950/70 border-t border-cardBorder">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+          <span class="text-xs uppercase tracking-widest text-indigo-400 font-bold">Transparent Licensing</span>
+          <h2 class="text-3xl font-extrabold text-white mt-1">Simple &amp; Fair Pricing</h2>
+          <p class="mt-2 text-sm text-slate-400">Evaluate the software first. Upgrade to a lifetime license only after you are completely satisfied.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
+          <!-- 1-Week Free Trial Card -->
+          <div class="bg-cardDark border border-cardBorder rounded-3xl p-8 flex flex-col justify-between relative">
+            <div>
+              <div class="inline-flex px-3 py-1 rounded-full text-xs font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 mb-4">
+                Full Feature Evaluation
+              </div>
+              <h3 class="text-2xl font-bold text-white">1-Week Free Trial</h3>
+              <p class="text-xs text-slate-400 mt-1">Ideal for testing your cataloging workflow and importing books.</p>
+              
+              <div class="mt-6 flex items-baseline gap-1">
+                <span class="text-4xl font-extrabold text-white">₹0</span>
+                <span class="text-xs text-slate-400">/ 7-day trial</span>
+              </div>
+
+              <ul class="mt-8 space-y-3 text-xs text-slate-300">
+                <li class="flex items-center">
+                  <span class="w-4 h-4 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center mr-2 text-[10px] font-bold">✓</span>
+                  Full access to all modules and features
+                </li>
+                <li class="flex items-center">
+                  <span class="w-4 h-4 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center mr-2 text-[10px] font-bold">✓</span>
+                  No credit card or upfront payment needed
+                </li>
+                <li class="flex items-center">
+                  <span class="w-4 h-4 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center mr-2 text-[10px] font-bold">✓</span>
+                  All cataloged books are kept when upgrading
+                </li>
+                <li class="flex items-center">
+                  <span class="w-4 h-4 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center mr-2 text-[10px] font-bold">✓</span>
+                  Issued directly via email upon Host ID request
+                </li>
+              </ul>
+            </div>
+
+            <div class="mt-8">
+              <a 
+                href="#activation" 
+                class="w-full inline-flex items-center justify-center px-6 py-3.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 font-semibold text-xs transition-colors"
+              >
+                Request Free Trial Key
+              </a>
+            </div>
+          </div>
+
+          <!-- Lifetime Pro License Card -->
+          <div class="bg-cardDark border border-indigo-500/50 rounded-3xl p-8 flex flex-col justify-between relative glow-indigo">
+            <span class="absolute -top-3.5 right-6 bg-indigo-600 text-white font-bold text-xs uppercase tracking-wider px-3 py-1 rounded-full shadow-lg shadow-indigo-600/30">
+              Lifetime Value
+            </span>
+            <div>
+              <div class="inline-flex px-3 py-1 rounded-full text-xs font-semibold bg-indigo-500/10 text-indigo-400 border border-indigo-500/20 mb-4">
+                After Trial Satisfaction
+              </div>
+              <h3 class="text-2xl font-bold text-white">Lifetime Pro License</h3>
+              <p class="text-xs text-slate-400 mt-1">Upgrade once satisfied with your trial period. No recurring fees.</p>
+              
+              <div class="mt-6 flex items-baseline gap-1">
+                <span class="text-4xl font-extrabold text-white">₹499</span>
+                <span class="text-xs text-slate-400">/ one-time payment</span>
+              </div>
+
+              <ul class="mt-8 space-y-3 text-xs text-slate-300">
+                <li class="flex items-center">
+                  <span class="w-4 h-4 rounded-full bg-indigo-500/20 text-indigo-400 flex items-center justify-center mr-2 text-[10px] font-bold">✓</span>
+                  Perpetual lifetime validity for your machine
+                </li>
+                <li class="flex items-center">
+                  <span class="w-4 h-4 rounded-full bg-indigo-500/20 text-indigo-400 flex items-center justify-center mr-2 text-[10px] font-bold">✓</span>
+                  Seamless upgrade without re-entering book records
+                </li>
+                <li class="flex items-center">
+                  <span class="w-4 h-4 rounded-full bg-indigo-500/20 text-indigo-400 flex items-center justify-center mr-2 text-[10px] font-bold">✓</span>
+                  Free future v1.x feature improvements
+                </li>
+                <li class="flex items-center">
+                  <span class="w-4 h-4 rounded-full bg-indigo-500/20 text-indigo-400 flex items-center justify-center mr-2 text-[10px] font-bold">✓</span>
+                  Direct email support from the software author
+                </li>
+              </ul>
+            </div>
+
+            <div class="mt-8">
+              <a 
+                href="mailto:ramgokak@yahoo.co.in?subject=Inquiry%20-%20Lifetime%20Pro%20License%20Purchase&body=Hello,%0D%0A%0D%0AI%20have%20evaluated%20Book%20Library%20Manager%20Pro%20and%20would%20like%20to%20purchase%20the%20Lifetime%20Pro%20License%20for%20Rs%20499.%0D%0A%0D%0AMy%20Host%20ID%20is:%20[PASTE_HOST_ID_HERE]%0D%0A%0D%0APlease%20share%20the%20payment%20details.%0D%0A%0D%0AThank%20you!"
+                class="w-full inline-flex items-center justify-center px-6 py-3.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-semibold text-xs transition-colors shadow-lg shadow-indigo-600/30"
+              >
+                Inquire for Lifetime Pro (₹499)
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-12 p-6 rounded-2xl bg-[#0d121f] border border-cardBorder text-slate-400 text-xs leading-relaxed">
+          <div class="flex items-start space-x-3">
+            <svg class="w-5 h-5 text-amber-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+            <div>
+              <strong class="text-slate-200 block mb-1">Important Legal Disclaimer &amp; Copyright Notice:</strong>
+              <p>
+                <strong>Book Library Manager Pro</strong> is purely a local cataloging, metadata management, and physical book organization tool intended solely for personal record-keeping, lending tracking, and private collection inventory. 
+                <span class="text-slate-300 font-medium">This software does NOT host, download, stream, store, share, or distribute any PDF files, EPUBs, e-books, audiobooks, or copyrighted digital reading materials of any kind.</span> 
+                All book cover artwork, titles, and author details entered into the software remain the intellectual property of their respective creators and copyright holders.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-slate-950 border-t border-cardBorder py-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-slate-400">
+      <div class="flex items-center space-x-2">
+        <span class="font-semibold text-slate-300">Book Library Manager Pro</span>
+        <span>•</span>
+        <span>Windows Desktop Edition</span>
+      </div>
+
+      <div class="flex items-center space-x-6">
+        <a href="#features" class="hover:text-slate-200 transition-colors">Features</a>
+        <a href="#download" class="hover:text-slate-200 transition-colors">Download</a>
+        <a href="#activation" class="hover:text-slate-200 transition-colors">Activation Guide</a>
+        <a href="mailto:ramgokak@yahoo.co.in" class="hover:text-slate-200 transition-colors">ramgokak@yahoo.co.in</a>
+      </div>
+
+      <div>
+        <p>© 2026 Book Library Manager Pro. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
