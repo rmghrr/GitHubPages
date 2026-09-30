@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RMG Software - App Portfolio</title>
+  <meta name="description" content="Portfolio of applications developed by RMG, including Book Library Manager, RmgTv, and RMG Chess Pro.">
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Inter', 'sans-serif'] },
+          colors: { appDark: '#0B0F19', cardDark: '#121826', cardBorder: '#1F293D' }
+        }
+      }
+    }
+  </script>
+</head>
+
+<body class="bg-appDark text-slate-100 font-sans antialiased min-h-screen flex flex-col">
+
+  <header class="sticky top-0 z-50 backdrop-blur-md bg-appDark/85 border-b border-cardBorder py-4">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h1 class="text-2xl font-bold tracking-tight text-white">RMG Software Hub</h1>
+    </div>
+  </header>
+
+  <main class="flex-grow py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-extrabold text-white tracking-tight">Our Applications</h2>
+        <p class="mt-4 text-slate-400 max-w-2xl mx-auto">Explore our suite of custom-built desktop and smart TV applications designed for entertainment, organization, and competitive play.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        
+        <!-- App 1: Book Library Manager -->
+        <a href="./BookLibManager/index.html" class="block group">
+          <div class="h-full bg-cardDark border border-cardBorder rounded-2xl p-6 hover:border-indigo-500/50 transition-all shadow-lg hover:shadow-indigo-500/10 flex flex-col">
+            <div class="w-12 h-12 rounded-xl bg-indigo-500/20 text-indigo-400 flex items-center justify-center mb-4">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
+            </div>
+            <h3 class="text-xl font-bold text-white mb-2">Book Library Manager</h3>
+            <p class="text-sm text-slate-400 flex-grow">Organize, track, and preserve your personal physical book collection on Windows desktop with built-in lending tracking and collection valuation.</p>
+            <div class="mt-6 text-indigo-400 text-sm font-semibold flex items-center group-hover:translate-x-1 transition-transform">
+              View Application <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+            </div>
+          </div>
+        </a>
+
+        <!-- App 2: RmgTv -->
+        <a href="./RmgTV/index.html" class="block group">
+          <div class="h-full bg-cardDark border border-cardBorder rounded-2xl p-6 hover:border-emerald-500/50 transition-all shadow-lg hover:shadow-emerald-500/10 flex flex-col">
+            <div class="w-12 h-12 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center mb-4">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+            </div>
+            <h3 class="text-xl font-bold text-white mb-2">RmgTv</h3>
+            <p class="text-sm text-slate-400 flex-grow">A cleaner, faster way to organize and browse live television channels. Built specifically for the Android TV and Fire OS ecosystem.</p>
+            <div class="mt-6 text-emerald-400 text-sm font-semibold flex items-center group-hover:translate-x-1 transition-transform">
+              View Application <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+            </div>
+          </div>
+        </a>
+
+        <!-- App 3: RMG Chess Pro -->
+        <a href="./RmgChessPro/index.html" class="block group">
+          <div class="h-full bg-cardDark border border-cardBorder rounded-2xl p-6 hover:border-amber-500/50 transition-all shadow-lg hover:shadow-amber-500/10 flex flex-col">
+            <div class="w-12 h-12 rounded-xl bg-amber-500/20 text-amber-400 flex items-center justify-center mb-4 text-2xl">
+              👑
+            </div>
+            <h3 class="text-xl font-bold text-white mb-2">RMG Chess Pro</h3>
+            <p class="text-sm text-slate-400 flex-grow">The ultimate chess companion. Play Stockfish 18, connect via local Wi-Fi, play globally on Lichess, and review GM matches on your TV.</p>
+            <div class="mt-6 text-amber-400 text-sm font-semibold flex items-center group-hover:translate-x-1 transition-transform">
+              View Application <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+            </div>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </main>
+
+  <footer class="bg-appDark border-t border-cardBorder py-8 mt-auto">
+    <div class="max-w-7xl mx-auto px-4 text-center text-xs text-slate-500">
+      <p>© 2026 RMG Software. All rights reserved.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
