@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chess Kabaddi — The Ultimate Team Tactical Chess Experience</title>
+  <meta name="description" content="Chess reimagined as a tactical squad battle! Assemble your squad over local Wi-Fi, vote on moves, raid opposing pieces, and conquer the board.">
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Inter', 'sans-serif'] },
+          colors: { appDark: '#0B0F19', cardDark: '#121826', cardBorder: '#1F293D' }
+        }
+      }
+    }
+  </script>
+</head>
+
+<body class="bg-appDark text-slate-100 font-sans antialiased min-h-screen flex flex-col">
+
+  <!-- Header -->
+  <header class="sticky top-0 z-50 backdrop-blur-md bg-appDark/85 border-b border-cardBorder">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      <div class="flex items-center space-x-3">
+        <!-- Top Icon Replacement Block -->
+        <img src="./chess_kabaddi_logo.png" alt="Chess Kabaddi Logo" class="w-10 h-10 rounded-xl shadow-lg shadow-rose-500/20 object-cover" onerror="this.onerror=null; this.src='https://placehold.co/100x100/f43f5e/ffffff?text=CK';" />
+        <div>
+          <span class="text-base sm:text-lg font-bold tracking-tight text-white block">Chess Kabaddi</span>
+          <span class="text-xs text-slate-400 font-medium tracking-wide hidden sm:block">Team Tactical Chess</span>
+        </div>
+      </div>
+
+      <nav class="hidden md:flex items-center space-x-7 text-sm font-medium text-slate-300">
+        <a href="#features" class="hover:text-rose-400 transition-colors">Features</a>
+        <a href="#how-to-play" class="hover:text-rose-400 transition-colors">How to Play</a>
+      </nav>
+
+      <div class="flex items-center space-x-3">
+        <a href="https://www.amazon.com/gp/product/B0HKFJWD8T" target="_blank" rel="noopener noreferrer" class="px-4 py-2 text-xs sm:text-sm font-semibold text-slate-900 bg-rose-500 hover:bg-rose-400 rounded-lg shadow-md shadow-rose-500/30 transition-all flex items-center">
+          <svg class="w-4 h-4 mr-1.5" fill="currentColor" viewBox="0 0 24 24"><path d="M13.62 10.87a2.76 2.76 0 0 0-2.6-1.89c-1.39 0-2.6 1.05-2.6 2.5 0 1.5 1.25 2.55 2.65 2.55 1.13 0 2.05-.62 2.5-1.55.15-.3.51-.43.83-.28.32.14.46.5.31.81-.66 1.34-1.95 2.22-3.48 2.22-2.18 0-3.95-1.77-3.95-3.95 0-2.18 1.77-3.95 3.95-3.95 1.7 0 3.23 1.05 3.79 2.65.13.36-.05.76-.41.89-.37.12-.76-.06-.89-.41zM21.2 5.37C18.63 2.8 15.17 1.3 11.5 1.3c-7.23 0-13.1 5.87-13.1 13.1S4.27 27.5 11.5 27.5c3.67 0 7.13-1.5 9.7-4.07.28-.28.28-.73 0-1.01-.28-.28-.73-.28-1.01 0-2.42 2.42-5.63 3.75-9.05 3.75-6.68 0-12.1-5.42-12.1-12.1s5.42-12.1 12.1-12.1c3.42 0 6.63 1.33 9.05 3.75.28.28.73.28 1.01 0 .28-.28.28-.73 0-1.01z"/></svg>
+          Get on Amazon
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main class="flex-grow">
+    <!-- Hero Section -->
+    <section class="relative pt-16 pb-12 overflow-hidden">
+      <div class="absolute inset-0 -z-10 flex items-center justify-center opacity-20">
+        <div class="w-[620px] h-[620px] bg-rose-600/30 blur-[150px] rounded-full pointer-events-none"></div>
+      </div>
+      
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-tight">
+          Welcome to Chess Kabaddi — The Ultimate Team Tactical Experience! ⚔️
+        </h1>
+        
+        <p class="mt-6 text-base sm:text-lg text-slate-400 leading-relaxed max-w-3xl mx-auto">
+          What happens when centuries-old royal chess strategy meets the intense squad mechanics, raids, and revivals of Kabaddi? 💥 Chess Kabaddi transforms classic turn-based chess into an adrenaline-pumping, multiplayer squad battle where strategy, teamwork, and speed determine who rules the board! ♟️🔥
+        </p>
+
+        <div class="mt-10 flex justify-center">
+          <a href="https://www.amazon.com/gp/product/B0HKFJWD8T" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center px-8 py-4 rounded-xl bg-rose-600 hover:bg-rose-500 text-white font-bold text-lg transition-all shadow-xl shadow-rose-600/20">
+            Download Chess Kabaddi
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- App Preview Image Placeholders -->
+    <section class="py-8 bg-slate-950/60 border-y border-cardBorder">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="text-2xl font-bold text-white mb-8">Interface & Gameplay</h2>
+        
+        <!-- Placeholder 1: Team Lobby -->
+        <div class="rounded-2xl border border-cardBorder bg-cardDark shadow-2xl overflow-hidden mb-8">
+          <img src="./screenshot1.png" alt="Chess Kabaddi Screenshot 1" class="w-full h-auto aspect-video object-cover bg-slate-900" onerror="this.onerror=null; this.src='https://placehold.co/1280x720/121826/475569?text=Chess+Kabaddi+Screenshot+1+(Replace+screenshot1.png)';" />
+        </div>
+        
+        <!-- Placeholder 2: Live Battle -->
+        <div class="rounded-2xl border border-cardBorder bg-cardDark shadow-2xl overflow-hidden mb-8">
+          <img src="./screenshot2.png" alt="Chess Kabaddi Screenshot 2" class="w-full h-auto aspect-video object-cover bg-slate-900" onerror="this.onerror=null; this.src='https://placehold.co/1280x720/121826/475569?text=Chess+Kabaddi+Screenshot+2+(Replace+screenshot2.png)';" />
+        </div>
+		<div class="rounded-2xl border border-cardBorder bg-cardDark shadow-2xl overflow-hidden mb-8">
+          <img src="./screenshot3.png" alt="Chess Kabaddi Screenshot 1" class="w-full h-auto aspect-video object-cover bg-slate-900" onerror="this.onerror=null; this.src='https://placehold.co/1280x720/121826/475569?text=Chess+Kabaddi+Screenshot+1+(Replace+screenshot3.png)';" />
+        </div>
+        
+        <!-- Placeholder 2: Live Battle -->
+        <div class="rounded-2xl border border-cardBorder bg-cardDark shadow-2xl overflow-hidden mb-8">
+          <img src="./screenshot4.png" alt="Chess Kabaddi Screenshot 2" class="w-full h-auto aspect-video object-cover bg-slate-900" onerror="this.onerror=null; this.src='https://placehold.co/1280x720/121826/475569?text=Chess+Kabaddi+Screenshot+2+(Replace+screenshot4.png)';" />
+        </div>
+		<div class="rounded-2xl border border-cardBorder bg-cardDark shadow-2xl overflow-hidden mb-8">
+          <img src="./screenshot5.png" alt="Chess Kabaddi Screenshot 1" class="w-full h-auto aspect-video object-cover bg-slate-900" onerror="this.onerror=null; this.src='https://placehold.co/1280x720/121826/475569?text=Chess+Kabaddi+Screenshot+1+(Replace+screenshot5.png)';" />
+        </div>
+        
+        <!-- Placeholder 2: Live Battle -->
+        <div class="rounded-2xl border border-cardBorder bg-cardDark shadow-2xl overflow-hidden mb-8">
+          <img src="./screenshot6.png" alt="Chess Kabaddi Screenshot 2" class="w-full h-auto aspect-video object-cover bg-slate-900" onerror="this.onerror=null; this.src='https://placehold.co/1280x720/121826/475569?text=Chess+Kabaddi+Screenshot+2+(Replace+screenshot6.png)';" />
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl font-extrabold text-white">🌟 Key Highlights & Game Features</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        
+        <!-- Battles -->
+        <div class="p-6 rounded-2xl bg-cardDark border border-cardBorder hover:border-rose-500/30 transition-colors">
+          <div class="text-3xl mb-4">🛡️</div>
+          <h3 class="text-lg font-bold text-white">Tactical Squad Battles</h3>
+          <p class="mt-2 text-sm text-slate-400 mb-4">Engage in competitive tactical clashes from 2v2 up to epic 10v10 group warfare!</p>
+          <ul class="text-sm text-slate-400 space-y-2 list-disc pl-4">
+            <li>Form your team and conquer the board.</li>
+            <li>Free 2v2 battles ready out of the box.</li>
+            <li>Massive squad expansion options available (3v3, 5v5, 7v7, 10v10).</li>
+          </ul>
+        </div>
+
+        <!-- LAN -->
+        <div class="p-6 rounded-2xl bg-cardDark border border-cardBorder hover:border-rose-500/30 transition-colors">
+          <div class="text-3xl mb-4">🤝</div>
+          <h3 class="text-lg font-bold text-white">Zero-Lag Local Wi-Fi (LAN)</h3>
+          <p class="mt-2 text-sm text-slate-400 mb-4">Connect instantly with friends and family over the same Wi-Fi network!</p>
+          <ul class="text-sm text-slate-400 space-y-2 list-disc pl-4">
+            <li>Zero internet connection required.</li>
+            <li>Pure, secure peer-to-peer competition anytime, anywhere.</li>
+            <li>Built-in team chat to coordinate battlefield tactics seamlessly!</li>
+          </ul>
+        </div>
+
+        <!-- Captain & Voting -->
+        <div class="p-6 rounded-2xl bg-cardDark border border-cardBorder hover:border-rose-500/30 transition-colors">
+          <div class="text-3xl mb-4">👑</div>
+          <h3 class="text-lg font-bold text-white">Captain Leadership & Voting</h3>
+          <p class="mt-2 text-sm text-slate-400 mb-4">Squad members propose and vote on moves in real time before the timer runs out!</p>
+          <ul class="text-sm text-slate-400 space-y-2 list-disc pl-4">
+            <li>Teammates analyze the board and vote on candidate moves.</li>
+            <li>Captains evaluate live suggestions via team dashboards.</li>
+            <li>Captains execute the final raid move before the buzzer sounds!</li>
+          </ul>
+        </div>
+
+        <!-- Raids & Revivals -->
+        <div class="p-6 rounded-2xl bg-cardDark border border-cardBorder hover:border-rose-500/30 transition-colors">
+          <div class="text-3xl mb-4">🎯</div>
+          <h3 class="text-lg font-bold text-white">Raid Hits, Eliminations & Revivals</h3>
+          <ul class="text-sm text-slate-400 space-y-2 list-disc pl-4 mt-2">
+            <li>Capture major opponent pieces to trigger knockout raids against their squad!</li>
+            <li>Keep your major pieces protected to stay in the game.</li>
+            <li>Earn vital Revives with strategic captures to bring fallen teammates back to the battlefield!</li>
+          </ul>
+        </div>
+
+        <!-- Engine Analysis -->
+        <div class="p-6 rounded-2xl bg-cardDark border border-cardBorder hover:border-rose-500/30 transition-colors">
+          <div class="text-3xl mb-4">♟️</div>
+          <h3 class="text-lg font-bold text-white">Classic Pass-and-Play & Engine</h3>
+          <ul class="text-sm text-slate-400 space-y-2 list-disc pl-4 mt-2">
+            <li>Enjoy local 2-Player Pass-and-Play mode on a single shared screen!</li>
+            <li>Built-in Stockfish chess engine evaluation bar.</li>
+            <li>Instant move evaluations to master your accuracy.</li>
+          </ul>
+        </div>
+
+        <!-- TV Control & Themes -->
+        <div class="p-6 rounded-2xl bg-cardDark border border-cardBorder hover:border-rose-500/30 transition-colors">
+          <div class="text-3xl mb-4">📺</div>
+          <h3 class="text-lg font-bold text-white">TV Control, Themes & Audio</h3>
+          <ul class="text-sm text-slate-400 space-y-2 list-disc pl-4 mt-2">
+            <li>Full D-Pad remote navigation optimized for Android TV and Fire TV.</li>
+            <li>Choose from 10 distinct board themes and custom piece styling options.</li>
+            <li>Dynamic sound effects for moves, captures, raids, and checkmates.</li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- How to Play Section -->
+    <section id="how-to-play" class="py-16 bg-[#0d121f] border-t border-cardBorder">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="p-8 rounded-3xl bg-cardDark border border-rose-500/30">
+          <h3 class="text-2xl font-bold text-rose-400 mb-6 flex items-center">
+            🕹️ How to Play
+          </h3>
+          
+          <ul class="space-y-6 text-sm text-slate-400">
+            <li class="flex items-start">
+              <span class="w-8 h-8 rounded-lg bg-rose-600/20 text-rose-400 font-bold flex items-center justify-center mr-4 flex-shrink-0">1</span>
+              <div>
+                <strong class="text-slate-200 block text-base mb-1">Host or Join</strong>
+                One player hosts the squad lobby over local Wi-Fi while teammates discover and join automatically.
+              </div>
+            </li>
+            <li class="flex items-start">
+              <span class="w-8 h-8 rounded-lg bg-rose-600/20 text-rose-400 font-bold flex items-center justify-center mr-4 flex-shrink-0">2</span>
+              <div>
+                <strong class="text-slate-200 block text-base mb-1">Strategize & Propose</strong>
+                During your turn, squad members propose their best tactical moves on their screens.
+              </div>
+            </li>
+            <li class="flex items-start">
+              <span class="w-8 h-8 rounded-lg bg-rose-600/20 text-rose-400 font-bold flex items-center justify-center mr-4 flex-shrink-0">3</span>
+              <div>
+                <strong class="text-slate-200 block text-base mb-1">Execute & Raid</strong>
+                The Captain picks the winning move to capture high-value targets, knock out rival teammates, and revive fallen allies!
+              </div>
+            </li>
+            <li class="flex items-start">
+              <span class="w-8 h-8 rounded-lg bg-rose-600/20 text-rose-400 font-bold flex items-center justify-center mr-4 flex-shrink-0">4</span>
+              <div>
+                <strong class="text-slate-200 block text-base mb-1">Conquer</strong>
+                Corner the opponent king and deliver checkmate for the ultimate squad victory!
+              </div>
+            </li>
+          </ul>
+          
+          <div class="mt-8 pt-6 border-t border-cardBorder text-center">
+            <span class="text-rose-400 font-semibold tracking-wider uppercase text-sm">Assemble • Strategize • Raid • Conquer</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-slate-950 border-t border-cardBorder py-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-slate-400">
+      <div class="flex items-center space-x-2">
+        <span class="font-semibold text-slate-300">Chess Kabaddi</span>
+        <span>•</span>
+        <span>Android / Fire OS</span>
+      </div>
+
+      <div class="flex items-center space-x-6">
+        <a href="https://www.amazon.com/gp/product/B0HKFJWD8T" target="_blank" rel="noopener noreferrer" class="hover:text-slate-200 transition-colors text-rose-500">Available on Amazon</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
